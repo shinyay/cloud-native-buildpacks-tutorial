@@ -6,6 +6,8 @@ Overview
 
 ## Demo
 
+![](images/cnb.gif)
+
 ## Features
 
 - feature:1
@@ -74,7 +76,7 @@ Tip: Learn more about a specific builder with:
 $ pack set-default-builder cloudfoundry/cnb
 ```
 
-#### Back Build
+#### Pack Build
 
 ```
 $ cd PATH/TO/APPDIR
@@ -191,7 +193,9 @@ Successfully built image java-app
 
 ```
 $ docker images
+```
 
+```
 REPOSITORY                                 TAG                 IMAGE ID            CREATED             SIZE
 pack-cache-e8510ea38131                    latest              f8e985c51e76        2 minutes ago       626MB
 java-app                                   latest              7e70b862c19a        2 minutes ago       1.28GB
@@ -200,8 +204,39 @@ cloudfoundry/cnb                           latest              516ed9227fd7     
 mysql                                      5.7                 07eaaab72756        38 hours ago        372MB
 ```
 
+#### Run App
+
 ```
 $ docker run --rm -p 8080:8080 java-app
+```
+
+```
+    |'-_ _-'|       ____          _  _      _                      _             _
+    |   |   |      |  _ \        (_)| |    | |                    | |           (_)
+     '-_|_-'       | |_) | _   _  _ | |  __| | _ __    __ _   ___ | | __ ___     _   ___
+|'-_ _-'|'-_ _-'|  |  _ < | | | || || | / _` || '_ \  / _` | / __|| |/ // __|   | | / _ \
+|   |   |   |   |  | |_) || |_| || || || (_| || |_) || (_| || (__ |   < \__ \ _ | || (_) |
+ '-_|_-' '-_|_-'   |____/  \__,_||_||_| \__,_|| .__/  \__,_| \___||_|\_\|___/(_)|_| \___/
+                                              | |
+                                              |_|
+
+:: Built with Spring Boot :: 2.1.3.RELEASE
+
+2019-04-04 01:55:02.106  INFO 1 --- [           main] i.b.example.sample.SampleApplication     : Starting SampleApplication on f8ddedbdea46 with PID 1 (/workspace/BOOT-INF/classes started by vcap in /workspace)
+2019-04-04 01:55:02.133  INFO 1 --- [           main] i.b.example.sample.SampleApplication     : No active profile set, falling back to default profiles: default
+2019-04-04 01:55:04.486  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-04-04 01:55:04.559  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-04-04 01:55:04.559  INFO 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-04-04 01:55:04.603  INFO 1 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/layers/org.cloudfoundry.openjdk/openjdk-jre/lib:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-04-04 01:55:04.785  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-04-04 01:55:04.786  INFO 1 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2554 ms
+2019-04-04 01:55:05.216  INFO 1 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-04-04 01:55:05.563  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-04-04 01:55:05.776  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-04-04 01:55:05.786  INFO 1 --- [           main] i.b.example.sample.SampleApplication     : Started SampleApplication in 4.684 seconds (JVM running for 5.562)
+2019-04-04 01:55:26.955  INFO 1 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-04-04 01:55:26.957  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-04-04 01:55:26.978  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
 ```
 
 ## Licence
